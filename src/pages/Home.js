@@ -21,7 +21,11 @@ const home = () => {
       <Services />
       <RoomProvider>
         <FeaturedRooms />
+        <FeaturedRooms />
       </RoomProvider>
+      {/* <RoomProvider>
+        <FeaturedRooms />
+      </RoomProvider> */}
     </>
   );
 };

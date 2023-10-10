@@ -430,7 +430,7 @@ h6 {
 /* single room*/
 
 .single-room {
-  padding: 3rem 0 0 0;
+  padding: 3rem 3rem 0 0;
 }
 
 .single-room-images {
@@ -445,6 +445,13 @@ h6 {
 .single-room-images img {
   width: 100%;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+.single-room-images img:hover {
+  transform: scale(1.08);
+  cursor: pointer;
+
 }
 
 .single-room-info {
@@ -452,6 +459,7 @@ h6 {
   display: grid;
   grid-template-columns: 1fr;
   margin: 2rem auto;
+  margin-left: 13px;
 }
 
 .desc,
@@ -693,4 +701,104 @@ h6 {
   .footer-logo {
     margin-bottom: 20px;
   }
+}
+
+.about-us-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Section styles */
+.about-section,
+.team-section,
+.mission-section {
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+/* Headings */
+.h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.line {
+  padding-top: 30px;
+  border-bottom: 1px solid #555;
+}
+
+/* Paragraph styles */
+.para {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .about-us-content {
+    padding: 10px;
+  }
+
+  .h2 {
+    font-size: 20px;
+  }
+
+  .para {
+    font-size: 14px;
+  }
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form h2 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.button-C {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.button-C:hover {
+  background-color: #0056b3;
 }

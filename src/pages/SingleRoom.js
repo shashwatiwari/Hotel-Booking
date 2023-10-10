@@ -1,14 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import defaultBcg from "../images/room-1.jpeg";
 import { Link, useParams } from "react-router-dom";
 import { RoomContext } from "../context";
 import StyledHero from "../components/StyledHero";
 import Banner from "../components/Banner";
+import ImageModal from "../components/ImageModal";
 
 const SingleRoom = () => {
   const { slug } = useParams();
   const { getRoom } = useContext(RoomContext);
   const room = getRoom(slug);
+
+  const [showFullScreenImage, setShowFullScreenImage] = useState(false);
+  const [fullScreenImage, setFullScreenImage] = useState("");
 
   if (!room) {
     return (
@@ -34,8 +38,20 @@ const SingleRoom = () => {
   } = room;
   const [main, ...defaultImages] = images;
 
+  // Function to open the full-screen image.
+  const openFullScreenImage = (imageUrl) => {
+    setFullScreenImage(imageUrl);
+    setShowFullScreenImage(true);
+  };
+
+  // Function to close the full-screen image.
+  const closeFullScreenImage = () => {
+    setShowFullScreenImage(false);
+    setFullScreenImage("");
+  };
+
   return (
-    <><h3 style={{ padding: '10px' }}>See <span style={{ color: '#af9a7d' }}>Room:</span></h3>
+    <><h3 style={{ padding: '10px', paddingTop: '20px' }}>See <span style={{ color: '#af9a7d' }}>Room:</span></h3>
       {/* <StyledHero img={images[0] || defaultBcg}>
         <Banner title={`${name} room`}>
           <Link to="/rooms" className="btn-primary">
@@ -43,10 +59,14 @@ const SingleRoom = () => {
           </Link>
         </Banner>
       </StyledHero> */}
+      {/* <img src={images[0]} style={{ height: '60%' }}></img> */}
+      {showFullScreenImage && (
+        <ImageModal imageUrl={fullScreenImage} onClose={closeFullScreenImage} />
+      )}
       <section className="single-room">
         <div className="single-room-images">
           {defaultImages.map((item, index) => (
-            <img key={index} src={item} alt={name} />
+            <img key={index} src={item} alt={name} onClick={() => openFullScreenImage(item)} />
           ))}
         </div>
         <div className="single-room-info">
