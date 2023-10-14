@@ -64,7 +64,7 @@ const SingleRoom = () => {
         <ImageModal imageUrl={fullScreenImage} onClose={closeFullScreenImage} />
       )}
       <section className="single-room">
-        <div className="single-room-images">
+        <div className="single-room-images ">
           {defaultImages.map((item, index) => (
             <img key={index} src={item} alt={name} onClick={() => openFullScreenImage(item)} />
           ))}

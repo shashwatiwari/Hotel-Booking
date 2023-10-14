@@ -802,3 +802,36 @@ textarea {
 .button-C:hover {
   background-color: #0056b3;
 }
+
+/* styles.css */
+/* Social Icons */
+.social-icon {
+  width: 21px;
+  height: 21px;
+  object-fit: contain;
+  filter: invert(1);
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  /* Add a scale effect on hover */
+  filter: invert(0);
+  /* Change color on hover */
+}
+
+/* Email, Phone, and Location Icons */
+.contact-icon {
+  width: 23px;
+  height: 23px;
+  object-fit: contain;
+  filter: invert(1);
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.contact-icon:hover {
+  transform: scale(1.2);
+  /* Add a scale effect on hover */
+  filter: invert(0);
+  /* Change color on hover */
+}
